@@ -8,7 +8,8 @@ Vue.config.devtools = true
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = 'http://192.168.1.13:5000';
+// axios.defaults.baseURL = 'http://192.168.1.13:5000';
+axios.defaults.baseURL = 'http://39.97.109.72';
 new Vue({
   router,
   render: h => h(App)
