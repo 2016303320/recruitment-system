@@ -8,8 +8,13 @@ const db = require('./config/keys').mongoURI
 const app = express()
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
-app.use(express.static(path.join(__dirname, 'public')))
 app.use(morgan('short')) // 打印日志中间件
+
+app.get('/admin',(req, res) => {
+  res.redirect('/#/admin')
+})
+
+app.use(express.static(path.join(__dirname, 'public')))
 // 连接数据库
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => { console.log('mongodb connect...') })
