@@ -1,18 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 import ResumeSubmit from '../views/ResumeSubmit.vue'
 import AdminInf from '../views/AdminInf'
 import AdminResume from '../views/AdminResume'
 import Admin from '../views/Admin'
 import SelectAdmin from '../views/SelectAdmin'
+import JobDescription from '../views/JobDescription'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    component: JobDescription
   },
   {
     path: '/resumeSubmit',

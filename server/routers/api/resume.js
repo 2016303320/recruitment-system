@@ -61,6 +61,16 @@ router.get('/getAllInf', (req, res) => {
     })
   })
 })
+
+router.post('/getInfById', (req, res) => {
+  const { _id } = req.body
+  information.findById({_id}).then(inf => {
+    res.json({
+      inf
+    })
+  })
+})
+
 router.post('/submitInf',(req, res) => {
   const inf = new information({
     date: req.body.date,

@@ -16,7 +16,15 @@
           </el-form-item>
 
           <el-form-item label="其他信息" prop="desc">
-            <el-input type="textarea" v-model="ruleForm.desc" placeholder="招聘广告，岗位所在城市等"></el-input>
+            <el-input type="textarea" :autosize="{ minRows: 10, maxRows: 10}" v-model="ruleForm.desc" 
+            placeholder="岗位描述及岗位要求（注意换行和格式）如：
+岗位描述：
+1、负责抖音、抖音火山版、机器学习平台等大规模集群的SRE和运维优化工作；
+2、负责核心服务的持续集成和交付，高效和自动化的运维优化，提升服务的稳定性和研发效率；
+3、负责大规模集群的云平台化、资源优化、SLA保障。
+岗位要求：
+1.学历本科及以上
+2.三年以上开发经验"></el-input>
           </el-form-item>
 
           <el-form-item>
@@ -50,17 +58,18 @@
           <el-table-column
             prop="desc"
             label="其他信息"
-            width="">
+            width="760">
           </el-table-column>
 
 
           <el-table-column
             fixed="right"
             label="操作"
-            width="100">
+            width="">
             <template slot-scope="scope">
               <el-button @click="deleteRow(scope.row)" type="text" size="medium">删除</el-button>
               <el-button @click="edit(scope.row)" type="text" size="medium">编辑</el-button>
+              <el-button @click="getCode(scope.row)" type="text" size="medium">获取投递二维码</el-button>
             </template>
           </el-table-column>
       </el-table>
@@ -195,6 +204,11 @@
         this.ruleForm.desc = row.desc
         this.confirmWords = "更新"
         this.editRow = row._id
+      },
+      getCode(row) {
+        const { _id } = row
+        const url = `https://cli.im/api/qrcode/code?text=http://www.heron.fit/%23/?id=${_id}&mhid=sULAX166n54hMHcnK9ZQOKo`
+        window.open(url)
       }
     }
   }

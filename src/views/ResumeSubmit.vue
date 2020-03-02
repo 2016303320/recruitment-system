@@ -1,12 +1,12 @@
 <template>
   <div class="resume-submit">
     <van-nav-bar 
-    left-text=""
-    left-arrow
-    @click-left="onClickLeft"
-  />
+      left-text="返回"
+      left-arrow
+      @click-left="onClickLeft"
+      fixed
+    />
     <h1>{{title}}</h1>
-    <h2>{{desc}}</h2>
 
     <van-cell-group>
       <van-field required v-model="name" label="真实姓名" placeholder="请输入完整姓名"/>
@@ -40,9 +40,9 @@
       </van-uploader>
     </div>
 
-    <div class="bottom">
-      <van-button class="bottom-button-submit" type="info" @click="submit">提交</van-button>
+    <div class="j-footer">
       <van-button class="bottom-button-submit" type="default" @click="reset">重置</van-button>      
+      <van-button class="bottom-button-submit" type="info" @click="submit">提交</van-button>
     </div>
 
   </div>
@@ -98,10 +98,10 @@ export default {
     }
   },
   created() {
-    const { _id, name, desc } = this.$route.query
+    const { _id, name } = this.$route.query
     this.id = _id
     this.title = name
-    this.desc = desc
+    // this.desc = desc
   },
   methods: {
     chooseBorn() {
@@ -277,14 +277,17 @@ export default {
 }
 </script>
 <style scoped>
+ .resume-submit{
+   padding-top: 40px;
+    padding-bottom: 74px;
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+    box-sizing: border-box;
+ }
   h1{
     font-size: 16px;
     font-weight: 700;
-    margin-left: 20px;
-  }
-  h2{
-    font-size: 12px;
-    font-weight: 600;
     margin-left: 20px;
   }
   .van-radio-group--horizontal{
@@ -303,20 +306,24 @@ export default {
     width: 300px;
     margin: 0 auto;
   }
-  .bottom {
-    border-top: 3px solid #eee;
-    height: 100px;
-    width: 100%;
-    line-height: 100px;
+  .j-footer {
     position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #e8e8e8;
+    background-color: #fff;
+    padding: 15px 20px;
   }
-  .bottom-button-submit {
-    /* display: inline-block; */
-    width: 110px;
-    left:20px;
-    bottom: 18px; 
+  .j-footer button{
+    width: 100px;
+    display: inline-block;
   }
-  .bottom-button-submit:nth-child(2) {
-     margin-left: 100px;
+  .j-footer button:nth-child(2){
+    width: 150px;
+    margin-left: 80px;
   }
+
+
 </style>
