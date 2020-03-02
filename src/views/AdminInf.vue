@@ -48,17 +48,17 @@
           <el-table-column
             prop="date"
             label="日期"
-            width="250">
+            width="200">
           </el-table-column>
           <el-table-column
             prop="name"
             label="招聘标题"
-            width="300">
+            width="240">
           </el-table-column>
           <el-table-column
             prop="desc"
             label="其他信息"
-            width="760">
+            width="570">
           </el-table-column>
 
 
@@ -214,7 +214,7 @@
   }
 </script>
 
-<style scoped>
+<style>
 .title {
   font-size: 26px;
   font-weight: 900;

@@ -116,12 +116,12 @@ export default {
   right: 0;
   border-top: 1px solid #e8e8e8;
   background-color: #fff;
-  padding: 15px 20px;
+  padding: 15px 5vw;
 }
 .j-footer button:nth-child(2) {
-  width: 200px;
+  width: 50vw;
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 10vw;
 }
 .u-share-mask {
   position: fixed;

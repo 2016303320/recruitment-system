@@ -40,7 +40,7 @@
       </van-uploader>
     </div>
 
-    <div class="j-footer">
+    <div class="j-footer" v-if="!showArea1&&!showArea2&&!showArea3">
       <van-button class="bottom-button-submit" type="default" @click="reset">重置</van-button>      
       <van-button class="bottom-button-submit" type="info" @click="submit">提交</van-button>
     </div>
@@ -278,12 +278,12 @@ export default {
 </script>
 <style scoped>
  .resume-submit{
-   padding-top: 40px;
+    padding-top: 40px;
     padding-bottom: 74px;
-    position: relative;
+    /* position: relative;
     height: 100vh;
     overflow: auto;
-    box-sizing: border-box;
+    box-sizing: border-box; */
  }
   h1{
     font-size: 16px;
@@ -308,7 +308,7 @@ export default {
   }
   .j-footer {
     position: fixed;
-    z-index: 999;
+    /* z-index: -999; */
     bottom: 0;
     left: 0;
     right: 0;
@@ -317,12 +317,12 @@ export default {
     padding: 15px 20px;
   }
   .j-footer button{
-    width: 100px;
+    width: 25vw;
     display: inline-block;
   }
   .j-footer button:nth-child(2){
-    width: 150px;
-    margin-left: 80px;
+    width: 40vw;
+    margin-left: 19vw;
   }
 
 
