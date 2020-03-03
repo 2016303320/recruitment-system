@@ -39,6 +39,7 @@ export default {
     }).then(res => {
       this.content = res.data.inf.desc
       this.name = res.data.inf.name
+      document.title = res.data.inf.name
     })
     
   },

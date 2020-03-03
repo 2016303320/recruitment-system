@@ -60,7 +60,10 @@ import { Area } from 'vant';
 import { Uploader } from 'vant';
 import { Button } from 'vant';
 import { Toast } from 'vant';
+import { Dialog } from 'vant';
 
+// 全局注册
+Vue.use(Dialog);
 Vue.use(Toast);
 Vue.use(Button)
 Vue.use(Uploader);
